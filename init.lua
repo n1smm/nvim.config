@@ -1,0 +1,2 @@
+require("nism")
+print("hello")
