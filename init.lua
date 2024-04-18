@@ -1,2 +1,1 @@
 require("nism")
-print("hello")
