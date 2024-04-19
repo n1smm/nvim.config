@@ -1,3 +1,6 @@
+vim.g.user = "n1smm"
+vim.g.mail = "tjaz.juvan@gmail.com"
+
 vim.api.nvim_set_option("clipboard","unnamed")
 
 -- Better command-line completion
