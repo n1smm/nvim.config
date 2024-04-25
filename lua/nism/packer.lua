@@ -1,4 +1,3 @@
--- This file can be loaded by calling `lua require('plugins')` from your init.vim
 
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
@@ -7,24 +6,17 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
+  -- fzf for nvim
   use {
 	  'nvim-telescope/telescope.nvim', tag = '0.1.6',
-	  -- or                            , branch = '0.1.x',
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
-
-  --use {"xero/miasma.nvim"}
-
-  use { "savq/melange-nvim" }
-
-  use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
-
+  -- fast tasks/file switcher
   use('theprimeagen/harpoon')
 
-  use('mbbill/undotree')
-
-  use('tpope/vim-fugitive')
-
+  -- parser generator/library for syntax highlighting etc.
+  use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+  -- lsp auto-configuration
   use {
 	  'VonHeikemen/lsp-zero.nvim',
 	  branch = 'v3.x',
@@ -40,9 +32,30 @@ return require('packer').startup(function(use)
 		  {'L3MON4D3/LuaSnip'},
 	  }
   }
+  -- definition/references finder - good for overview of references
+  use ('pechorin/any-jump.vim')
 
+  -- undo history
+  use('mbbill/undotree')
+  -- git management
+  use('tpope/vim-fugitive')
+
+  -- 42-school must extensions
   use ('42Paris/42header')
-
   use ('cacharle/c_formatter_42.vim')
+
+  -- easy commenting
+  use ('tpope/vim-commentary')
+
+  -- prettier to the eye
+  use ('MunifTanjim/nui.nvim')
+  use {
+	  "folke/noice.nvim",
+	  opts = function(_, opts)
+		  opts.present.lsp_doc_border = true
+	  end,
+  }
+  -- theme
+  use { "savq/melange-nvim" }
 
 end)

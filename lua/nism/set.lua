@@ -1,6 +1,7 @@
 vim.g.user = "n1smm"
 vim.g.mail = "tjaz.juvan@gmail.com"
 
+--setting copy paste TODO (not working properly)
 vim.api.nvim_set_option("clipboard","unnamed")
 
 -- Better command-line completion
@@ -41,6 +42,23 @@ vim.o.visualbell = true
 -- Reset the terminal code for the visual bell
 vim.o.t_vb = ''
 
+-- Enable filetype plugins
+vim.cmd('filetype plugin on')
+
+-- Enable filetype indent settings
+vim.cmd('filetype indent on')
+
+-- Set the width of an indentation level to 4 spaces
+vim.o.shiftwidth = 4
+
+-- Set the width of a tab character to 4 spaces
+vim.o.tabstop = 4
+
+-- Use actual tab characters instead of spaces when indenting
+vim.o.expandtab = false
+
+-- FUNCTIONS --
+
 --numbers
 vim.wo.number = true
 function ToggleRelNumber()
@@ -51,12 +69,8 @@ function ToggleRelNumber()
     end
 end
 
-
--- Set the width of an indentation level to 4 spaces
-vim.o.shiftwidth = 4
-
--- Set the width of a tab character to 4 spaces
-vim.o.tabstop = 4
-
--- Use actual tab characters instead of spaces when indenting
-vim.o.expandtab = false
+--write n quit
+function WriteQuit()
+	vim.cmd('w')
+	vim.cmd('q')
+end
