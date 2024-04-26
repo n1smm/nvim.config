@@ -1,34 +1,46 @@
---leader set
+--leader set = space
 vim.g.mapleader = " "
 
---open netrw explorer in window
+--open netrw explorer in window ; EXplorer = ex
 vim.keymap.set("n", "<leader>ex", vim.cmd.Ex)
---open netrw as side window
-vim.keymap.set("n", "<leader>tt", vim.cmd.Lexplore)
+--toggle netrw as side window ; Explorer to Side = es
+vim.keymap.set("n", "<leader>es", vim.cmd.Lexplore)
 
 --switch from normal to relative numbering
 vim.api.nvim_set_keymap('n', '<F6>', ':lua ToggleRelNumber()<CR>', { noremap = true, silent = true })
 
--- Map Ctrl-i to insert mode with an underscore and return to normal mode
+-- insert before 1 char = ctr + i
 vim.api.nvim_set_keymap('n', '<C-i>', 'i_<Esc>r', { noremap = true })
 
--- Map Ctrl-a to append mode with an underscore and return to normal mode
+-- insert after 1 char = ctr + a
 vim.api.nvim_set_keymap('n', '<C-a>', 'a_<Esc>r', { noremap = true })
 
---split window
+--split window ; Vertical Split = vs ; Horizontal Split = hs
 vim.keymap.set("n", "<leader>vs", vim.cmd.vsp)
-vim.keymap.set("n", "<leader>vv", vim.cmd.sp)
+vim.keymap.set("n", "<leader>hs", vim.cmd.sp)
 
---writing and quitting
+--writing and quitting ; Writeall = ww ; Write and Quit = wq
 vim.keymap.set('n', '<leader>wq', '<cmd>lua WriteQuit()<CR>', { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>ww", vim.cmd.wall)
 
--- switch windows
+-- switch windows ; w = Window hjkl= direction
 vim.keymap.set("n", "<leader>wl", '<C-w>l') 
 vim.keymap.set("n", "<leader>wh", '<C-w>h')
 vim.keymap.set("n", "<leader>wj", '<C-w>j')
 vim.keymap.set("n", "<leader>wk", '<C-w>k')
 
---clear highlight of / search
-vim.keymap.set("n", "<leader>nn", vim.cmd.noh)
+--clear highlight of / search ; vb = Visual Bell
+vim.keymap.set("n", "<leader>vb", vim.cmd.noh)
 
+-- KEYBINDS OF OTHER PLUGINS
+--
+-- <leader>gs = git search (fugitive)
+-- <leader>u  = Undotree toggle (UndoTree)
+-- harpoon
+-- <leader>a = add file to quick menu
+-- control + e = toggle quick menu
+-- alt + 1,2,3,4 = switch to 1st,2nd,3rd,4th saved window
+--telescope - fzf engine
+-- <leader>ff = Find Files
+-- <leader>fg = Find Git files
+-- <leader>fw = Find Word (uses ripgrep)
