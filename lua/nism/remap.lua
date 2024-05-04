@@ -7,7 +7,7 @@ vim.keymap.set("n", "<leader>ex", vim.cmd.Ex)
 vim.keymap.set("n", "<leader>es", vim.cmd.Lexplore)
 
 --exit insert mode
-	vim.keymap.set("i", "<A-j>", '<C-c>', {noremap = true, silent = true})
+vim.keymap.set("i", "<A-n>", '<C-c>')
 --switch from normal to relative numbering
 vim.api.nvim_set_keymap('n', '<F6>', ':lua ToggleRelNumber()<CR>', { noremap = true, silent = true })
 
