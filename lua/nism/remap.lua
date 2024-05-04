@@ -6,6 +6,8 @@ vim.keymap.set("n", "<leader>ex", vim.cmd.Ex)
 --toggle netrw as side window ; Explorer to Side = es
 vim.keymap.set("n", "<leader>es", vim.cmd.Lexplore)
 
+--exit insert mode
+	vim.keymap.set("i", "<A-j>", '<C-c>', {noremap = true, silent = true})
 --switch from normal to relative numbering
 vim.api.nvim_set_keymap('n', '<F6>', ':lua ToggleRelNumber()<CR>', { noremap = true, silent = true })
 
