@@ -8,14 +8,21 @@ vim.keymap.set("n", "<leader>es", vim.cmd.Lexplore)
 
 --exit insert mode
 vim.keymap.set("i", "<A-n>", '<C-c>')
+
 --switch from normal to relative numbering
 vim.api.nvim_set_keymap('n', '<F6>', ':lua ToggleRelNumber()<CR>', { noremap = true, silent = true })
 
 -- insert before 1 char = ctr + i
-vim.api.nvim_set_keymap('n', '<C-i>', 'i_<Esc>r', { noremap = true })
+--vim.api.nvim_set_keymap('n', '<C-i>', 'i_<Esc>r', { noremap = true })
 
 -- insert after 1 char = ctr + a
 vim.api.nvim_set_keymap('n', '<C-a>', 'a_<Esc>r', { noremap = true })
+
+--copy/past to clipboard
+vim.keymap.set("n", "<leader>y", '"+y')
+vim.keymap.set("v", "<leader>y", '"+y')
+vim.keymap.set("n", "<leader>p", '"+p')
+vim.keymap.set("v", "<leader>p", '"+p')
 
 --split window ; Vertical Split = vs ; Horizontal Split = hs
 vim.keymap.set("n", "<leader>vs", vim.cmd.vsp)
