@@ -35,10 +35,30 @@ return require('packer').startup(function(use)
   -- definition/references finder - good for overview of references
   use ('pechorin/any-jump.vim')
 
+  --copilot
+  use ('github/copilot.vim')
+  --copilot chat
+  use {
+		  "CopilotC-Nvim/CopilotChat.nvim",
+		  branch = "canary",
+		  dependencies = {
+			  { "zbirenbaum/copilot.lua" }, -- or github/copilot.vim
+			  { "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
+		  },
+		  opts = {
+			  debug = true, -- Enable debugging
+			  -- See Configuration section for rest
+		  },
+		  -- See Commands section for default commands if you want to lazy load on them
+  }
+
   -- undo history
   use('mbbill/undotree')
   -- git management
   use('tpope/vim-fugitive')
+
+  --live html,css,js preview
+  use('turbio/bracey.vim')
 
   -- 42-school must extensions
   use ('42Paris/42header')

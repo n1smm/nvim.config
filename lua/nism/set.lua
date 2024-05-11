@@ -57,8 +57,10 @@ vim.o.tabstop = 4
 -- Use actual tab characters instead of spaces when indenting
 vim.o.expandtab = false
 
+--color of statusline
+vim.cmd('highlight StatusLine guibg=#2c1608')
+ 
 -- FUNCTIONS --
-
 --numbers
 vim.wo.number = true
 function ToggleRelNumber()
@@ -66,7 +68,7 @@ function ToggleRelNumber()
         vim.o.relativenumber = false
     else
         vim.o.relativenumber = true
-    end
+   end
 end
 
 --write n quit
