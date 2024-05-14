@@ -9,4 +9,5 @@ vim.g.copilot_filetypes = {
 ['vue'] = true,
 ['lua'] = true,
 ['html'] = true,
+['css'] = true,
 } 
