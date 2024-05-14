@@ -11,3 +11,5 @@ vim.g.copilot_filetypes = {
 ['html'] = true,
 ['css'] = true,
 } 
+
+vim.keymap.set("n", "<leader>co", vim.cmd.CopilotToggle)
