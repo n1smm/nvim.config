@@ -34,3 +34,5 @@ vim.g.copilot_filetypes = {
 ['graphql'] = true,
 ['graphqls'] = true,
 } 
+
+vim.keymap.set("n", "<leader>co", vim.cmd.CopilotToggle)
