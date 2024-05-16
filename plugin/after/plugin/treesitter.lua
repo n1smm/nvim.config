@@ -24,6 +24,18 @@ require'nvim-treesitter.configs'.setup {
 	  "scss",
 	  "svelte",
 	  "php",
+	  "python",
+	  "json",
+	  "yaml",
+	  "toml",
+	  "tsx",
+	  "regex",
+	  "bash",
+	  "dockerfile",
+	  "jsonc",
+	  "json5",
+	  "nix",
+	  "ocaml",
   },
   --config = function(_, opts)
 	  --require("nvim-treesitter.configs").setup(opts)
