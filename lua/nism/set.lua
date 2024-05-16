@@ -76,3 +76,14 @@ function WriteQuit()
 	vim.cmd('w')
 	vim.cmd('q')
 end
+
+--write with sudo permissions
+function SudoWrite()
+    if vim.fn.expand("%") == "" then
+        print("No file to write.")
+        return
+    end
+    local file_path = vim.fn.expand("%:p")
+    vim.cmd(string.format("silent! write !sudo tee %s > /dev/null", file_path))
+    print("File saved with sudo permissions.")
+end

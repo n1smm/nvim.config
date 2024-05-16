@@ -32,6 +32,9 @@ vim.keymap.set("n", "<leader>hs", vim.cmd.sp)
 vim.keymap.set('n', '<leader>wq', '<cmd>lua WriteQuit()<CR>', { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>ww", vim.cmd.wall)
 
+--sudo write
+vim.api.nvim_set_keymap('n', '<leader>ws', ':lua SudoWrite()<CR>', { noremap = true, silent = true })
+
 -- switch windows ; w = Window hjkl= direction
 vim.keymap.set("n", "<leader>wl", '<C-w>l') 
 vim.keymap.set("n", "<leader>wh", '<C-w>h')
