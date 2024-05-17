@@ -80,6 +80,8 @@ return require('packer').startup(function(use)
 		  opts.present.lsp_doc_border = true
 	  end,
   }
+  --ansiesc support
+  use ('powerman/vim-plugin-AnsiEsc')
   -- theme
   use { "savq/melange-nvim" }
 
