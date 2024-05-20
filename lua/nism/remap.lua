@@ -6,7 +6,7 @@ vim.keymap.set("n", "<leader>ex", vim.cmd.Ex)
 --toggle netrw as side window ; Explorer to Side = es
 vim.keymap.set("n", "<leader>es", vim.cmd.Lexplore)
 --lazygit mapping
-vim .keymap.set("n", "<leader>gg", vim.cmd.LazyGit)
+vim .keymap.set("n", "<leader>lg", vim.cmd.LazyGit)
 
 --exit insert mode
 vim.keymap.set("i", "<A-n>", '<C-c>')
@@ -30,9 +30,10 @@ vim.keymap.set("v", "<leader>p", '"+p')
 vim.keymap.set("n", "<leader>vs", vim.cmd.vsp)
 vim.keymap.set("n", "<leader>hs", vim.cmd.sp)
 
---writing and quitting ; Writeall = ww ; Write and Quit = wq
+--writing and quitting ; Writeall = ww ; Write and Quit = wq; force quit = qf
 vim.keymap.set('n', '<leader>wq', '<cmd>lua WriteQuit()<CR>', { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>ww", vim.cmd.wall)
+vim.keymap.set("n", "<leader>fq", '<cmd>lua ForceQuit()<CR>')
 
 --sudo write
 vim.api.nvim_set_keymap('n', '<leader>ws', ':lua SudoWrite()<CR>', { noremap = true, silent = true })

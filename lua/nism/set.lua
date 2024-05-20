@@ -77,6 +77,11 @@ function WriteQuit()
 	vim.cmd('q')
 end
 
+--force quit
+function ForceQuit()
+	vim.cmd('q!')
+end
+
 function SudoWrite()
     if vim.fn.expand("%") == "" then
         print("No file to write.")
