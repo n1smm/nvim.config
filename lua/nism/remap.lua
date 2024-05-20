@@ -5,6 +5,8 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>ex", vim.cmd.Ex)
 --toggle netrw as side window ; Explorer to Side = es
 vim.keymap.set("n", "<leader>es", vim.cmd.Lexplore)
+--lazygit mapping
+vim .keymap.set("n", "<leader>gg", vim.cmd.LazyGit)
 
 --exit insert mode
 vim.keymap.set("i", "<A-n>", '<C-c>')

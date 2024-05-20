@@ -61,6 +61,14 @@ return require('packer').startup(function(use)
   use('mbbill/undotree')
   -- git management
   use('tpope/vim-fugitive')
+  -- lazygit
+  use({
+	  "kdheepak/lazygit.nvim",
+	  -- optional for floating window border decoration
+	  requires = {
+		  "nvim-lua/plenary.nvim",
+	  },
+  })
 
   --live html,css,js preview
   use('turbio/bracey.vim')
