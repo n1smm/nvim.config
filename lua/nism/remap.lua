@@ -18,7 +18,7 @@ vim.api.nvim_set_keymap('n', '<F6>', ':lua ToggleRelNumber()<CR>', { noremap = t
 --vim.api.nvim_set_keymap('n', '<C-i>', 'i_<Esc>r', { noremap = true })
 
 -- insert after 1 char = ctr + a
-vim.api.nvim_set_keymap('n', '<C-a>', 'a_<Esc>r', { noremap = true })
+-- vim.api.nvim_set_keymap('n', '<C-a>', 'a_<Esc>r', { noremap = true })
 
 --copy/past to clipboard
 vim.keymap.set("n", "<leader>y", '"+y')
