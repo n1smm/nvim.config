@@ -43,6 +43,9 @@ vim.keymap.set("n", "<leader>wl", '<C-w>l')
 vim.keymap.set("n", "<leader>wh", '<C-w>h')
 vim.keymap.set("n", "<leader>wj", '<C-w>j')
 vim.keymap.set("n", "<leader>wk", '<C-w>k')
+--resize windows ; Window Resize = wr ; Window Maximize = wm
+vim.keymap.set("n", "<leader>wr", '<C-w>=')
+vim.keymap.set("n", "<leader>wm", '<C-w>|')
 
 --clear highlight of / search ; vb = Visual Bell
 vim.keymap.set("n", "<leader>vb", vim.cmd.noh)
