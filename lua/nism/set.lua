@@ -62,7 +62,7 @@ vim.cmd('highlight StatusLine guibg=#2c1608')
  
 -- FUNCTIONS --
 --numbers
-vim.wo.number = true
+vim.o.relativenumber = true
 function ToggleRelNumber()
     if vim.o.relativenumber then
         vim.o.relativenumber = false
