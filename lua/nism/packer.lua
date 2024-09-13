@@ -57,6 +57,18 @@ return require('packer').startup(function(use)
 		  -- See Commands section for default commands if you want to lazy load on them
   }
 
+	  --auto save
+  use({
+	  "Pocco81/auto-save.nvim",
+	  config = function()
+		  require("auto-save").setup {
+			  enabled = false,
+			  -- your config goes here
+			  -- or just leave it empty :)
+		  }
+	  end,
+  })
+
   -- undo history
   use('mbbill/undotree')
   -- git management
@@ -70,8 +82,14 @@ return require('packer').startup(function(use)
 	  },
   })
 
-  --live html,css,js preview
+  --live html,css,js preview - http server
   use('turbio/bracey.vim')
+  --nvim emmet
+  use({'olrtg/nvim-emmet',
+  	config = function()
+		vim.keymap.set({"n", "v"}, "<leader>em", require('nvim-emmet').wrap_with_abbreviation)end
+  })
+
 
   -- 42-school must extensions
   use ('42Paris/42header')

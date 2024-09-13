@@ -5,8 +5,14 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>ex", vim.cmd.Ex)
 --toggle netrw as side window ; Explorer to Side = es
 vim.keymap.set("n", "<leader>es", vim.cmd.Lexplore)
+-- change directory to current file in netrw
+vim.keymap.set("n", "<leader>cd", '<cmd>lcd %:p:h<CR>')
+
 --lazygit mapping
 vim .keymap.set("n", "<leader>lg", vim.cmd.LazyGit)
+
+-- togle auto-save
+vim.api.nvim_set_keymap("n", "<leader>as", ":ASToggle<CR>", {})
 
 --exit insert mode
 vim.keymap.set("i", "<A-n>", '<C-c>')
@@ -14,7 +20,7 @@ vim.keymap.set("i", "<A-n>", '<C-c>')
 --switch from normal to relative numbering
 vim.api.nvim_set_keymap('n', '<F6>', ':lua ToggleRelNumber()<CR>', { noremap = true, silent = true })
 
--- insert before 1 char = ctr + i
+-- insert befbitwig live syncore 1 char = ctr + i
 --vim.api.nvim_set_keymap('n', '<C-i>', 'i_<Esc>r', { noremap = true })
 
 -- insert after 1 char = ctr + a
