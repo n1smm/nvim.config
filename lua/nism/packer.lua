@@ -89,6 +89,10 @@ return require('packer').startup(function(use)
   	config = function()
 		vim.keymap.set({"n", "v"}, "<leader>em", require('nvim-emmet').wrap_with_abbreviation)end
   })
+  --backend, databases, etc.
+  use('tpope/vim-dadbod')
+  use('kristijanhusak/vim-dadbod-ui')
+  use('kristijanhusak/vim-dadbod-completion')
 
 
   -- 42-school must extensions
@@ -106,6 +110,9 @@ return require('packer').startup(function(use)
 		  opts.present.lsp_doc_border = true
 	  end,
   }
+  use ('VonHeikemen/fine-cmdline.nvim')
+  use ('VonHeikemen/searchbox.nvim')
+
   --ansiesc support
   use ('powerman/vim-plugin-AnsiEsc')
   -- theme
