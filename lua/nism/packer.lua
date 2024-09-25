@@ -90,9 +90,13 @@ return require('packer').startup(function(use)
 		vim.keymap.set({"n", "v"}, "<leader>em", require('nvim-emmet').wrap_with_abbreviation)end
   })
   --backend, databases, etc.
+  --database manager
   use('tpope/vim-dadbod')
   use('kristijanhusak/vim-dadbod-ui')
   use('kristijanhusak/vim-dadbod-completion')
+  --rest client
+  -- use('NTBBloodbath/rest.nvim')
+  use('diepm/vim-rest-console')
 
 
   -- 42-school must extensions

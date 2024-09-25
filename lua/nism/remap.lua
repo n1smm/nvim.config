@@ -8,19 +8,6 @@ vim.keymap.set("n", "<leader>es", vim.cmd.Lexplore)
 -- change directory to current file in netrw
 vim.keymap.set("n", "<leader>cd", '<cmd>lcd %:p:h<CR>')
 
---lazygit mapping
-vim .keymap.set("n", "<leader>lg", vim.cmd.LazyGit)
-
--- togle auto-save
-vim.api.nvim_set_keymap("n", "<leader>as", ":ASToggle<CR>", {})
-
---exit insert mode
-vim.keymap.set("i", "<A-n>", '<C-c>')
-
---floating cmd line
-vim.api.nvim_set_keymap('n', ':', '<cmd>FineCmdline<CR>', {noremap = true})
-vim.keymap.set('n', '<leader>s', ':SearchBoxIncSearch<CR>')
-
 --switch from normal to relative numbering
 vim.api.nvim_set_keymap('n', '<F6>', ':lua ToggleRelNumber()<CR>', { noremap = true, silent = true })
 
@@ -59,6 +46,24 @@ vim.keymap.set("n", "<leader>wm", '<C-w>|')
 
 --clear highlight of / search ; vb = Visual Bell
 vim.keymap.set("n", "<leader>vb", vim.cmd.noh)
+
+-- EXTERNAL PLUGINS KEYBINDS
+
+--lazygit mapping
+vim .keymap.set("n", "<leader>lg", vim.cmd.LazyGit)
+
+--rest console mapping
+vim.keymap.set("n", "<leader>rc", ":call VrcQuery()<CR>")
+
+-- togle auto-save
+vim.api.nvim_set_keymap("n", "<leader>as", ":ASToggle<CR>", {})
+
+--exit insert mode
+vim.keymap.set("i", "<A-n>", '<C-c>')
+
+--floating cmd line
+vim.api.nvim_set_keymap('n', ':', '<cmd>FineCmdline<CR>', {noremap = true})
+vim.keymap.set('n', '<leader>s', ':SearchBoxIncSearch<CR>')
 
 -- KEYBINDS OF OTHER PLUGINS
 --
