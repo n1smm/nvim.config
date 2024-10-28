@@ -18,6 +18,9 @@ return require('packer').startup(function(use)
 
   -- fast tasks/file switcher
   use('theprimeagen/harpoon')
+  
+  --multiline editing
+  use('mg979/vim-visual-multi')
 
   -- parser generator/library for syntax highlighting etc.
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
@@ -39,6 +42,18 @@ return require('packer').startup(function(use)
   }
   -- definition/references finder - good for overview of references
   use ('pechorin/any-jump.vim')
+
+  --debugger DAP
+  -- use {
+	  -- 'mfussenegger/nvim-dap',
+	  -- requires = {
+		  -- {'nvim-neotest/nvim-nio'},
+		  -- {'theHamsta/nvim-dap-virtual-text'},
+		  -- {'rcarriga/nvim-dap-ui'},
+		  -- {'mfussenegger/nvim-dap-python'},
+		  -- {'nvim-telescope/telescope-dap.nvim'},
+	  -- }
+  -- }
 
   --copilot
   use ('github/copilot.vim')

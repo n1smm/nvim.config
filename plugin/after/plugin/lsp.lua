@@ -6,15 +6,15 @@ local lsp_zero = require('lsp-zero')
   end)
 
 
---lsp_zero.setup_servers({
---	'clangd',
---	'cmake',
---	'vscode-html-language-server',
---	'rust-analyzer',
---	'css-variables-language-server',
---	'vscode-json-language-server',
---	'bash-language-server',
---})
+-- lsp_zero.setup_servers({
+-- 	'clangd',
+-- 	'cmake',
+-- 	'rust-analyzer',
+-- 	'css-variables-language-server',
+-- 	'vscode-json-language-server',
+-- 	'bash-language-server',
+-- 	'sqlls',
+-- })
 
 require('mason').setup({})
 require('mason-lspconfig').setup({

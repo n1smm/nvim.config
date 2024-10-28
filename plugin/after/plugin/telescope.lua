@@ -5,9 +5,21 @@ vim.keymap.set('n', '<leader>fg', builtin.git_files, {})
 vim.keymap.set('n', '<leader>fw',function() 
 	builtin.grep_string({ search = vim.fn.input("Grep > ") });
 end)
-
+vim.keymap.set('n', '<leader>fn', ':lua require("telescope.builtin").lsp_workspace_symbols({symbols = {"function"}})<CR>', {noremap = true, silent = true})
 -- telescope file browser
 vim.keymap.set("n", "<space>fb", ":Telescope file_browser<CR>")
+
+
+local ignore_filetypes_list = {
+    "%.o", "venv", "__pycache__", "%.xlsx", "%.jpg", "%.png", "%.webp",
+    "%.pdf", "%.odt", "%.ico", "%.svg", "%.zip", "%.tar", "%.gz",
+	"%.xz", "%.bz2", "%.rar", "%.7z", "%.mp4", "%.avi", "%.mkv",
+	"%.mp3", "%.flac", "%.wav", "%.ogg", "%.m4a", "%.opus", "%.flv",
+	"%.mov", "%.wmv", "%.webm", "%.m4v", "%.mpg", "%.mpeg",
+	"%.m2ts", "%.vob", "%.iso", "%.bin",
+}
+
+
 require("telescope").setup {
   extensions = {
     file_browser = {
@@ -30,6 +42,9 @@ require("telescope").setup {
         },
       },
     },
+  },
+  defaults = {
+	file_ignore_patterns = ignore_filetypes_list,
   },
 }
 require("telescope").load_extension "file_browser"
