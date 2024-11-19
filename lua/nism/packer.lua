@@ -4,6 +4,9 @@ vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
   -- Packer can manage itself
+
+  use '~/.config/nvim/newplug'
+
   use 'wbthomason/packer.nvim'
 
   -- telescope - fzf for nvim
@@ -15,10 +18,19 @@ return require('packer').startup(function(use)
 	  "nvim-telescope/telescope-file-browser.nvim",
 	  requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
   }
+  use {
+	  'nvim-telescope/telescope-ui-select.nvim',
+  requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
+  }
+
+  -- fzf-lua
+  use { "ibhagwan/fzf-lua",
+  requires = { "nvim-tree/nvim-web-devicons" }
+}
 
   -- fast tasks/file switcher
   use('theprimeagen/harpoon')
-  
+
   --multiline editing
   use('mg979/vim-visual-multi')
 
@@ -113,6 +125,10 @@ return require('packer').startup(function(use)
   -- use('NTBBloodbath/rest.nvim')
   use('diepm/vim-rest-console')
 
+  --arduino environment
+  use {'stevearc/vim-arduino'}
+  -- use {'sudar/vim-arduino-syntax'}
+
 
   -- 42-school must extensions
   use ('42Paris/42header')
@@ -129,8 +145,10 @@ return require('packer').startup(function(use)
 		  opts.present.lsp_doc_border = true
 	  end,
   }
-  use ('VonHeikemen/fine-cmdline.nvim')
+  -- UI improvements
+  -- use ('VonHeikemen/fine-cmdline.nvim')
   use ('VonHeikemen/searchbox.nvim')
+  use {'stevearc/dressing.nvim'}
 
   --ansiesc support
   use ('powerman/vim-plugin-AnsiEsc')

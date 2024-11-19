@@ -62,8 +62,10 @@ vim.api.nvim_set_keymap("n", "<leader>as", ":ASToggle<CR>", {})
 vim.keymap.set("i", "<A-n>", '<C-c>')
 
 --floating cmd line
-vim.api.nvim_set_keymap('n', ':', '<cmd>FineCmdline<CR>', {noremap = true})
+-- vim.api.nvim_set_keymap('n', ':', '<cmd>FineCmdline<CR>', {noremap = true})
 vim.keymap.set('n', '<leader>s', ':SearchBoxIncSearch<CR>')
+
+vim.keymap.set('n', '<leader>so', ':source $MYVIMRC<CR>', {noremap = true})
 
 -- KEYBINDS OF OTHER PLUGINS
 --

@@ -40,7 +40,7 @@ vim.o.confirm = true
 vim.o.visualbell = true
 
 -- Reset the terminal code for the visual bell
-vim.o.t_vb = ''
+-- vim.o.t_vb = ''
 
 -- Enable filetype plugins
 vim.cmd('filetype plugin on')
@@ -107,3 +107,17 @@ function SudoWrite()
     print("File saved with sudo permissions.")
 end
 
+-- 5108: Error executing lua [string ":source (no file)"]:2: loop or previous error loading module 'nism.
+-- set'                                                                                                   
+-- stack traceback:                                                                                       
+--     [C]: in function 'require'                                                                         
+--     [string ":source (no file)"]:2: in main chunk                                                      
+--     [C]: in function 'nvim_exec2'                                                                      
+--     vim/_editor.lua: in function <vim/_editor.lua:0>                                                   
+--     [C]: in function 'pcall'                                                                           
+--     ...packer/start/fine-cmdline.nvim/lua/fine-cmdline/init.lua:98: in function <...packer/start/fine-c
+-- mdline.nvim/lua/fine-cmdline/init.lua:94>                                                              
+--     [C]: in function 'pcall'                                                                           
+--     ...packer/start/fine-cmdline.nvim/lua/fine-cmdline/init.lua:65: in function 'on_submit'            
+--     ...m/site/pack/packer/start/nui.nvim/lua/nui/input/init.lua:162: in function <...m/site/pack/packer
+-- /start/nui.nvim/lua/nui/input/init.lua:149>       

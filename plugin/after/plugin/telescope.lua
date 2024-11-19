@@ -2,10 +2,12 @@ local builtin = require('telescope.builtin')
 local fb_actions = require "telescope".extensions.file_browser.actions
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.git_files, {})
-vim.keymap.set('n', '<leader>fw',function() 
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+vim.keymap.set('n', '<leader>fa', vim.lsp.buf.code_action, {})
+vim.keymap.set('n', '<leader>fw',function()
 	builtin.grep_string({ search = vim.fn.input("Grep > ") });
 end)
-vim.keymap.set('n', '<leader>fn', ':lua require("telescope.builtin").lsp_workspace_symbols({symbols = {"function"}})<CR>', {noremap = true, silent = true})
+-- vim.keymap.set('n', '<leader>fn', ':lua require("telescope.builtin").lsp_workspace_symbols({symbols = {"function"}})<CR>', {noremap = true, silent = true})
 -- telescope file browser
 vim.keymap.set("n", "<space>fb", ":Telescope file_browser<CR>")
 
@@ -42,9 +44,30 @@ require("telescope").setup {
         },
       },
     },
+	["ui-select"] = {
+		require("telescope.themes").get_dropdown({
+			border = true,
+			winblend = 10,
+			previewer = false,
+			-- prompt = " > ",
+			-- results_title = false,
+			-- preview_title = false,
+			-- mappings = {
+			-- 	i = {
+			-- 		["<C-x>"] = false,
+			-- 		["<C-v>"] = false,
+			-- 	},
+			-- 	n = {
+			-- 		["<C-x>"] = false,
+			-- 		["<C-v>"] = false,
+			-- 	},
+			-- },
+		}),
+	},
   },
   defaults = {
 	file_ignore_patterns = ignore_filetypes_list,
   },
 }
 require("telescope").load_extension "file_browser"
+require("telescope").load_extension "ui-select"
