@@ -15,77 +15,49 @@ local lsp_servers = {
 	'vimls',
 	'yamlls',
 	'typos_lsp',
+	'pyright',
+	'sqlls',
+	'emmet_ls',
 }
+
+local function setup_arduino_language_server()
+	require('lspconfig').arduino_language_server.setup({
+		cmd = {
+			"arduino-language-server", "/home/thiew/go/bin/arduino-language-server",
+			"-clangd", "/usr/bin/clangd",
+			"-cli", "/home/thiew/.local/bin/arduino-cli",
+			"-cli-config", "/home/thiew/.arduino15/arduino-cli.yaml",
+			"-fqbn", "arduino:avr:uno",
+		},
+		capabilities = lsp_capabilities,
+		on_attach = on_attach,
+		filetypes = { "arduino" },
+	})
+end
 
 local mason_lspconfig = require('mason-lspconfig').setup({
 	ensure_installed = lsp_servers,
 	handlers = {
 		function(server_name)
-			require('lspconfig')[server_name].setup({
-				capabilities = lsp_capabilities,
-				on_attach = on_attach,
-				settings = {
-					Lua = {
-						diagnostics = {
-							globals = { 'vim' }
+			if server_name == 'arduino_language_server' then
+				-- capabilities = lsp_capabilities
+				setup_arduino_language_server()
+			else
+				require('lspconfig')[server_name].setup({
+					capabilities = lsp_capabilities,
+					on_attach = on_attach,
+					settings = {
+						Lua = {
+							diagnostics = {
+								globals = { 'vim' }
+							}
 						}
 					}
-				}
-			})
+				})
+			end
 		end,
 	}
 })
 
 local lspconfig = require('lspconfig')
 
-
-
-
-
-
-
-
-
-
---local lsp_zero = require('lsp-zero')
---  --lsp_zero.extend_lspconfig()
-
---  lsp_zero.on_attach(function(client, bufnr)
---    lsp_zero.default_keymaps({buffer = bufnr})
---  end)
-
---  local lsp = require('lspconfig')
-
---  lsp.arduino_language_server.setup({
---	  cmd = {
---		  "arduino-language-server",
---		  "-cli-config", "/home/thiew/.arduino15/arduino-cli.yaml",
---		  "-fqbn", "arduino:avr:uno",
---		  "-cli", "/home/thiew/.local/bin/arduino-cli",
---	  },
---	  on_attach = lsp_zero.on_attach,
---	  filetypes = { "arduino" },
---  })
-
-
-
---require('mason').setup({})
---require('mason-lspconfig').setup({
---	handlers = {
---		function(server_name)
---			require('lspconfig')[server_name].setup({
---				capabilities = capabilities,
---				on_attach = on_attach,
---				settings = {
---					Lua = {
---						diagnostics = {
---							globals = { 'vim' }
---						}
---					}
---				}
---			})
---		end,
---	}
---})
---
---

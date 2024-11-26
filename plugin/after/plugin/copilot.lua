@@ -33,6 +33,7 @@ vim.g.copilot_filetypes = {
 ['sql'] = true,
 ['graphql'] = true,
 ['graphqls'] = true,
+['arduino'] = true,
 } 
 
 vim.keymap.set("n", "<leader>co", vim.cmd.CopilotToggle)
