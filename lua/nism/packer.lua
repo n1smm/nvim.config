@@ -116,6 +116,8 @@ return require('packer').startup(function(use)
   	config = function()
 		vim.keymap.set({"n", "v"}, "<leader>em", require('nvim-emmet').wrap_with_abbreviation)end
   })
+  use('epilande/vim-react-snippets')
+
   --backend, databases, etc.
   --database manager
   use('tpope/vim-dadbod')
