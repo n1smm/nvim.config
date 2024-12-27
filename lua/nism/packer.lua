@@ -52,6 +52,8 @@ return require('packer').startup(function(use)
 		  {'L3MON4D3/LuaSnip'},
 	  }
   }
+  use ('saadparwaiz1/cmp_luasnip')
+  use ("rafamadriz/friendly-snippets")
   -- definition/references finder - good for overview of references
   use ('pechorin/any-jump.vim')
 
@@ -72,7 +74,7 @@ return require('packer').startup(function(use)
   --copilot chat
   use {
 		  "CopilotC-Nvim/CopilotChat.nvim",
-		  branch = "canary",
+		  branch = "main",
 		  dependencies = {
 			  { "zbirenbaum/copilot.lua" }, -- or github/copilot.vim
 			  { "nvim-lua/plenary.nvim" }, -- for curl, log wrapper

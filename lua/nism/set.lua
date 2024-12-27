@@ -60,6 +60,14 @@ vim.o.expandtab = false
 --color of statusline
 vim.cmd('highlight StatusLine guibg=#2c1608')
  
+-- Disable automatic comment continuation on a new line
+vim.api.nvim_exec([[
+  augroup DisableAutoComment
+    autocmd!
+    autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+  augroup END
+]], false)
+
 -- FUNCTIONS --
 --numbers
 vim.opt.number = true
