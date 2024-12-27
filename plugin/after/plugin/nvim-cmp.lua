@@ -20,7 +20,16 @@ local cmp = require'cmp'
       ['<C-f>'] = cmp.mapping.scroll_docs(4),
       ['<C-space>'] = cmp.mapping.complete(),
       ['<C-e>'] = cmp.mapping.abort(),
-      ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+	  ['<C-y>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item with <C-y>
+	  ['<CR>'] = cmp.mapping(function(fallback)
+		  if cmp.visible() then
+			  cmp.close()
+			  fallback()
+		  else
+			  fallback()
+		  end
+	  end, { 'i', 's' }), -- Use <CR> to insert a newline
+      -- ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     }),
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
