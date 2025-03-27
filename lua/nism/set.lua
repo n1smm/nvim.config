@@ -57,9 +57,18 @@ vim.o.tabstop = 4
 -- Use actual tab characters instead of spaces when indenting
 vim.o.expandtab = false
 
+--vim rest console
+vim.g.vrc_show_command = 1
+vim.g.vrc_show_response = 1
+vim.g.vrc_show_headers = 1
+vim.g.vrc_show_body = 1
+vim.g.vrc_show_status = 1
+
+
 --color of statusline
 vim.cmd('highlight StatusLine guibg=#2c1608')
- 
+
+
 -- Disable automatic comment continuation on a new line
 vim.api.nvim_exec([[
   augroup DisableAutoComment
@@ -78,6 +87,26 @@ function ToggleRelNumber()
     else
         vim.o.relativenumber = true
    end
+end
+
+--set background color
+local has_bg = false
+function Set_background_color()
+	if (has_bg) then
+		vim.cmd('set background=dark')
+		vim.cmd.colorscheme("melange")
+
+		vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+		vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+
+		vim.api.nvim_set_hl(0, "StatusLine", { bg = '#2c1608' })
+		has_bg = false
+	else
+		vim.cmd('set background=light')
+		vim.api.nvim_set_hl(0, "Normal", { bg = '#8ff2bd' })
+		vim.cmd.colorscheme("melange")
+		has_bg = true
+	end
 end
 
 --write n quit

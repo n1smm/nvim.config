@@ -18,7 +18,7 @@ local ignore_filetypes_list = {
 	"%.xz", "%.bz2", "%.rar", "%.7z", "%.mp4", "%.avi", "%.mkv",
 	"%.mp3", "%.flac", "%.wav", "%.ogg", "%.m4a", "%.opus", "%.flv",
 	"%.mov", "%.wmv", "%.webm", "%.m4v", "%.mpg", "%.mpeg",
-	"%.m2ts", "%.vob", "%.iso", "%.bin",
+	"%.m2ts", "%.vob", "%.iso", "%.bin", "node_modules", "%.exe",
 }
 
 

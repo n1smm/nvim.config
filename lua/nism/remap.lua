@@ -55,7 +55,7 @@ vim .keymap.set("n", "<leader>lg", vim.cmd.LazyGit)
 --rest console mapping
 vim.keymap.set("n", "<leader>rc", ":call VrcQuery()<CR>")
 
--- togle auto-save
+-- toggle auto-save
 vim.api.nvim_set_keymap("n", "<leader>as", ":ASToggle<CR>", {})
 
 --exit insert mode
@@ -66,6 +66,10 @@ vim.keymap.set("i", "<A-n>", '<C-c>')
 vim.keymap.set('n', '<leader>s', ':SearchBoxIncSearch<CR>')
 
 vim.keymap.set('n', '<leader>so', ':source $MYVIMRC<CR>', {noremap = true})
+
+
+--change the background color for this session
+vim.keymap.set('n', '<leader>bg', ':lua Set_background_color()<CR>', {noremap = true})
 
 -- KEYBINDS OF OTHER PLUGINS
 --

@@ -54,8 +54,15 @@ return require('packer').startup(function(use)
   }
   use ('saadparwaiz1/cmp_luasnip')
   use ("rafamadriz/friendly-snippets")
+
   -- definition/references finder - good for overview of references
   use ('pechorin/any-jump.vim')
+
+  -- folding plugin
+  use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
+
+  -- colored parentheses
+  use ('luochen1990/rainbow')
 
   --debugger DAP
   -- use {
@@ -132,6 +139,11 @@ return require('packer').startup(function(use)
   --arduino environment
   use {'stevearc/vim-arduino'}
   -- use {'sudar/vim-arduino-syntax'}
+
+  --solidity
+  use {'tomlion/vim-solidity'}
+  -- use {'ChristianChiarulli/vim-solidity'}
+
 
 
   -- 42-school must extensions
